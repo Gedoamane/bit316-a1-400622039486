@@ -138,6 +138,8 @@ nrow(storms_raw) - nrow(storms_clean)    # rows removed by drop_na()
 # The drop_na() is kept as a safety step so the code stays correct if the data changes.
 
 ## C3. group_by() + summarise(): several grouped statistics -------------------
+# n_storms counts distinct storm names per year, while n_obs counts every
+# 6-hourly reading, so n_obs is always much larger than n_storms.
 yearly_summary <- storms_clean %>%
   group_by(year) %>%
   summarise(
