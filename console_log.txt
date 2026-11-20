@@ -1,0 +1,217 @@
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v dplyr     1.1.4     v readr     2.1.5
+v forcats   1.0.0     v stringr   1.5.1
+v ggplot2   3.4.4     v tibble    3.2.1
+v lubridate 1.9.3     v tidyr     1.3.1
+v purrr     1.0.2     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+[1]  64.82  92.60 120.38 148.16 203.72 259.28
+[1] 80
+[1] 50
+[1] 35 65
+[1]  50  65  80 110 140
+[1] "Claudette" "Danny"     "Elsa"      "Fred"     
+[1] "ANA"       "BILL"      "CLAUDETTE" "DANNY"     "ELSA"      "FRED"     
+[1] "weak"     "moderate" "strong"  
+intensity
+    weak moderate   strong 
+       2        2        2 
+[1] "Katrina"
+[1] 2005
+[1] 100 150 175
+[1] 150
+     a b c
+row1 1 3 5
+row2 2 4 6
+a b c 
+1 3 5 
+row1 row2 
+   3    4 
+[1] 6
+  storm wind    level
+2  Bill   50 moderate
+[1]  35  50  65  80 110 140
+[1] "Ana"       "Bill"      "Claudette" "Danny"     "Elsa"      "Fred"     
+[1] 65
+Rows: 19537 Columns: 13
+-- Column specification --------------------------------------------------------
+Delimiter: ","
+chr  (2): name, status
+dbl (11): year, month, day, hour, lat, long, category, wind, pressure, tropi...
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+[1] 19537    13
+cols(
+  name = col_character(),
+  year = col_double(),
+  month = col_double(),
+  day = col_double(),
+  hour = col_double(),
+  lat = col_double(),
+  long = col_double(),
+  status = col_character(),
+  category = col_double(),
+  wind = col_double(),
+  pressure = col_double(),
+  tropicalstorm_force_diameter = col_double(),
+  hurricane_force_diameter = col_double()
+)
+[1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame" 
+Rows: 19,537
+Columns: 13
+$ name                         <chr> "Amy", "Amy", "Amy", "Amy", "Amy", "Amy",~
+$ year                         <dbl> 1975, 1975, 1975, 1975, 1975, 1975, 1975,~
+$ month                        <dbl> 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,~
+$ day                          <dbl> 27, 27, 27, 27, 28, 28, 28, 28, 29, 29, 2~
+$ hour                         <dbl> 0, 6, 12, 18, 0, 6, 12, 18, 0, 6, 12, 18,~
+$ lat                          <dbl> 27.5, 28.5, 29.5, 30.5, 31.5, 32.4, 33.3,~
+$ long                         <dbl> -79.0, -79.0, -79.0, -79.0, -78.8, -78.7,~
+$ status                       <chr> "tropical depression", "tropical depressi~
+$ category                     <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+$ wind                         <dbl> 25, 25, 25, 25, 25, 25, 25, 30, 35, 40, 4~
+$ pressure                     <dbl> 1013, 1013, 1013, 1013, 1012, 1012, 1011,~
+$ tropicalstorm_force_diameter <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+$ hurricane_force_diameter     <dbl> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+spc_tbl_ [19,537 x 13] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ name                        : chr [1:19537] "Amy" "Amy" "Amy" "Amy" ...
+ $ year                        : num [1:19537] 1975 1975 1975 1975 1975 ...
+ $ month                       : num [1:19537] 6 6 6 6 6 6 6 6 6 6 ...
+ $ day                         : num [1:19537] 27 27 27 27 28 28 28 28 29 29 ...
+ $ hour                        : num [1:19537] 0 6 12 18 0 6 12 18 0 6 ...
+ $ lat                         : num [1:19537] 27.5 28.5 29.5 30.5 31.5 32.4 33.3 34 34.4 34 ...
+ $ long                        : num [1:19537] -79 -79 -79 -79 -78.8 -78.7 -78 -77 -75.8 -74.8 ...
+ $ status                      : chr [1:19537] "tropical depression" "tropical depression" "tropical depression" "tropical depression" ...
+ $ category                    : num [1:19537] NA NA NA NA NA NA NA NA NA NA ...
+ $ wind                        : num [1:19537] 25 25 25 25 25 25 25 30 35 40 ...
+ $ pressure                    : num [1:19537] 1013 1013 1013 1013 1012 ...
+ $ tropicalstorm_force_diameter: num [1:19537] NA NA NA NA NA NA NA NA NA NA ...
+ $ hurricane_force_diameter    : num [1:19537] NA NA NA NA NA NA NA NA NA NA ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   name = col_character(),
+  ..   year = col_double(),
+  ..   month = col_double(),
+  ..   day = col_double(),
+  ..   hour = col_double(),
+  ..   lat = col_double(),
+  ..   long = col_double(),
+  ..   status = col_character(),
+  ..   category = col_double(),
+  ..   wind = col_double(),
+  ..   pressure = col_double(),
+  ..   tropicalstorm_force_diameter = col_double(),
+  ..   hurricane_force_diameter = col_double()
+  .. )
+ - attr(*, "problems")=<externalptr> 
+     name                year          month             day       
+ Length:19537       Min.   :1975   Min.   : 1.000   Min.   : 1.00  
+ Class :character   1st Qu.:1994   1st Qu.: 8.000   1st Qu.: 8.00  
+ Mode  :character   Median :2004   Median : 9.000   Median :16.00  
+                    Mean   :2003   Mean   : 8.706   Mean   :15.73  
+                    3rd Qu.:2013   3rd Qu.: 9.000   3rd Qu.:24.00  
+                    Max.   :2022   Max.   :12.000   Max.   :31.00  
+                                                                   
+      hour             lat             long            status         
+ Min.   : 0.000   Min.   : 7.00   Min.   :-136.90   Length:19537      
+ 1st Qu.: 5.000   1st Qu.:18.30   1st Qu.: -78.80   Class :character  
+ Median :12.000   Median :26.60   Median : -62.30   Mode  :character  
+ Mean   : 9.101   Mean   :27.01   Mean   : -61.56                     
+ 3rd Qu.:18.000   3rd Qu.:33.80   3rd Qu.: -45.50                     
+ Max.   :23.000   Max.   :70.70   Max.   :  13.50                     
+                                                                      
+    category          wind           pressure      tropicalstorm_force_diameter
+ Min.   :1.000   Min.   : 10.00   Min.   : 882.0   Min.   :   0.0              
+ 1st Qu.:1.000   1st Qu.: 30.00   1st Qu.: 986.0   1st Qu.:   0.0              
+ Median :1.000   Median : 45.00   Median :1000.0   Median : 110.0              
+ Mean   :1.896   Mean   : 50.05   Mean   : 993.5   Mean   : 147.9              
+ 3rd Qu.:3.000   3rd Qu.: 65.00   3rd Qu.:1007.0   3rd Qu.: 220.0              
+ Max.   :5.000   Max.   :165.00   Max.   :1024.0   Max.   :1440.0              
+ NA's   :14734                                     NA's   :9512                
+ hurricane_force_diameter
+ Min.   :  0.00          
+ 1st Qu.:  0.00          
+ Median :  0.00          
+ Mean   : 14.92          
+ 3rd Qu.:  0.00          
+ Max.   :300.00          
+ NA's   :9512            
+# A tibble: 6 x 13
+  name   year month   day  hour   lat  long status       category  wind pressure
+  <chr> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <chr>           <dbl> <dbl>    <dbl>
+1 Amy    1975     6    27     0  27.5 -79   tropical de~       NA    25     1013
+2 Amy    1975     6    27     6  28.5 -79   tropical de~       NA    25     1013
+3 Amy    1975     6    27    12  29.5 -79   tropical de~       NA    25     1013
+4 Amy    1975     6    27    18  30.5 -79   tropical de~       NA    25     1013
+5 Amy    1975     6    28     0  31.5 -78.8 tropical de~       NA    25     1012
+6 Amy    1975     6    28     6  32.4 -78.7 tropical de~       NA    25     1012
+# i 2 more variables: tropicalstorm_force_diameter <dbl>,
+#   hurricane_force_diameter <dbl>
+# A tibble: 13 x 2
+   column                       n_missing
+   <chr>                            <int>
+ 1 category                         14734
+ 2 tropicalstorm_force_diameter      9512
+ 3 hurricane_force_diameter          9512
+ 4 name                                 0
+ 5 year                                 0
+ 6 month                                0
+ 7 day                                  0
+ 8 hour                                 0
+ 9 lat                                  0
+10 long                                 0
+11 status                               0
+12 wind                                 0
+13 pressure                             0
+# A tibble: 10 x 7
+   name    year month  wind pressure category wind_kmh
+   <chr>  <dbl> <dbl> <dbl>    <dbl>    <dbl>    <dbl>
+ 1 Wilma   2005    10   160      882        5     296.
+ 2 Dorian  2019     9   160      910        5     296.
+ 3 Dorian  2019     9   160      910        5     296.
+ 4 Rita    2005     9   155      895        5     287.
+ 5 Rita    2005     9   155      897        5     287.
+ 6 Irma    2017     9   155      926        5     287.
+ 7 Irma    2017     9   155      915        5     287.
+ 8 Irma    2017     9   155      914        5     287.
+ 9 Irma    2017     9   155      914        5     287.
+10 Irma    2017     9   155      914        5     287.
+[1] 0
+# A tibble: 48 x 6
+    year n_storms n_obs mean_wind max_wind mean_pressure
+   <dbl>    <int> <int>     <dbl>    <dbl>         <dbl>
+ 1  1975        8   238      52.4      120          994.
+ 2  1976        7   126      56.3      105          992.
+ 3  1977        6    92      49.0      150          998.
+ 4  1978       11   152      51.6      120          997.
+ 5  1979        8   324      47.9      150          995.
+ 6  1980       11   335      60.8      165          988.
+ 7  1981       11   311      51.8      115          996.
+ 8  1982        5   111      48.6      115          997.
+ 9  1983        4    88      45        100         1002.
+10  1984       12   342      48.4      115          996.
+# i 38 more rows
+# A tibble: 9 x 3
+  status                 n_obs mean_wind
+  <chr>                  <int>     <dbl>
+1 hurricane               4803      86.6
+2 tropical storm          6830      45.7
+3 subtropical storm        298      44.4
+4 extratropical           2151      41.5
+5 disturbance              171      30.0
+6 tropical wave            111      28.6
+7 tropical depression     3569      27.5
+8 subtropical depression   151      26.7
+9 other low               1453      25.6
+# A tibble: 6 x 3
+   year diameter_type                mean_diameter_nm
+  <dbl> <chr>                                   <dbl>
+1  2004 tropicalstorm_force_diameter            147. 
+2  2004 hurricane_force_diameter                 25.4
+3  2005 tropicalstorm_force_diameter            134. 
+4  2005 hurricane_force_diameter                 16.8
+5  2006 tropicalstorm_force_diameter            206. 
+6  2006 hurricane_force_diameter                 17.9
